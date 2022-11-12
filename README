@@ -1,0 +1,76 @@
+||----------------------------------------TEMA-1-IOCLA--------------------------------||
+----Introducere----
+Tema a durat ceva timp, 3 zile deoarece nu eram familiarizat cu conceptul de
+vector generic si mutarea efectiva a octetilor din memorie, dar pot sa spun
+ca dupa ce mi-a iesit in main stocarea de date si functia de inserare la sfarsit,
+mi-a fost mult mai usor sa rezolv functiile urmatoare.
+Codul ar fi putut fi mai optimizat, si consider ca uneori am
+lucrat mai "migalos",in special la citirea elementelor
+din linie si la printarea elementelor, doar pentru a sti eu
+mai exact ce se imtampla in situatia respectiva.
+
+----main----
+Doar ca sa clarific in main len este lungimea vectorului in octeti si count 
+este numarul elemtelor, tin sa clarific deoarece in unele functii count este
+folosit si ca lungimea octetilor.
+
+In main am inceput cu alocarea structurii si a headerului, apoi intru
+intru while(1) care citeste din stdin pana la comanda exit.
+Pentru fiecare sir de caractere pe care l-am folosit am alocat dinamic 
+inainte de a introduce orice valoare, motiv pentru care
+am folosit acele while-uri care se plimba prin linie si contorizeaza numarul
+spatiilor pe care il folosesc in a stabili lungimea sirurilor.
+Dupa intru in citirea efectiva a componentelor structurii cu 
+ajutorul functiei sscanf, care mi s-a parut mult mai stabila
+decat functia strtok, chiar daca am citit de mai multe ori aceleasi adrese. 
+Daca functia este insert_at se citeste indexul in plus.
+Apoi verific tipul structurii dupa care introduc tipul, lungimea care este 
+lungimea sirurilor + suma int-urilor, apoi aloc dinamic pointerul catre date, 
+dupa care mut octetii din valorile citite mai devreme in data. Apoi intru in 
+cele una din cele 2 functii: insert sau insert_at si maresc numarul elementelor cu 1;
+
+----insert----
+In insert aloc vectorul daca este gol, si daca are deja elemente realoc vectorul
+cu len + lungimea elementelor din structura, unde len este lungimea in octeti.
+Apoi adaug in vector pe rand elementele structurii, cresc lungimea initial 
+cu cea adaugata si ma intorc in main.
+
+----insert_at----
+La insert_at, dar si delete_at si find folosesc aceleasi medota de a
+ plimba pana la indexul de care am nevoie, mai exact
+primesc ca parametru numarul elementelor si cu un for de la 1 la index 
+cresc un count care creste la fiecare pas cu lungimea
+elementului respectiv. Aici am un count_before care retine numarul octetilor 
+pana la locatia de unde incep sa adaug octeti,
+si count_after care retine de la aceleasi punct pana la sfarsit.
+Vectorul este realocat cu lungimea initiala(count_after + count_before) +
+lungimea elementului care trebuie adaugat.
+Apoi se muta tot continutul de dupa index cu distanta fiind lungimea elementului
+care trebuie adaugat. Mutarea se face de la capat spre inceput deoarece in sens 
+invers ar fi schimbat valori gresite cand ajunge la octetii care au fost deja mutati.
+Apoi in locul liber creat, care este fix lungimea necesara, se muta din structura datele necesare.
+
+----find----
+La find count-ul are rolul lui count_before de la insert_at, il folosesc 
+pentru a apela functia print de la count_before doar pe primul element.
+
+----delete_at----
+Aici aflu din nou cele doua lungimi count_after si count_before, in
+schimb aici mut toate date de dupa elementulul care urmeaza a fi 
+sters in spate cu lungimea sa, apoi realoc dinamic cu 
+lungimea initiala - lungimea elementului.
+
+----print----
+In print am folosit o variabila auxiliara pentru fiecare lucru pe care il 
+afisez adica un char pentru tip doua siruri pentru nume,
+si, in functie de tip cele doua bancnote. Cu ajutorul variabilei count retin 
+pozitia octetului la care am ajuns. La citirea stringurilor am adaugat si 
+alocat pana la terminatorul de sir iar la int-uri am citit direct stiind 
+marimea fiecarui tip. Apoi le-am afisat pe toate in ordinea corespunzatoare.
+Dupa toate functiile se iese din while cu exit si apoi se elibereaza structura,
+headerul, bufferul si apoi vectorul. O tema foarte grea la inceput daca nu esti
+familiarizat cu concepetele propuse, care devine usoara cu fiecare linie de cod inteleasa
+si scrisa. Looking back doar ma deranjeaza ca mi-a luat mult sa inteleg enuntul 
+si restrictiile si adaugarea in structura, de acolo a fost usor. 
+Ne vedem la tema 2 sper cu enuntul putin mai inteligibil, va rog.
+Papaaa numai am chef de niciun partial.
