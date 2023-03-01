@@ -1,13 +1,3 @@
-----Introducere----
-Tema a durat ceva timp, 3 zile deoarece nu eram familiarizat cu conceptul de
-vector generic si mutarea efectiva a octetilor din memorie, dar pot sa spun
-ca dupa ce mi-a iesit in main stocarea de date si functia de inserare la sfarsit,
-mi-a fost mult mai usor sa rezolv functiile urmatoare.
-Codul ar fi putut fi mai optimizat, si consider ca uneori am
-lucrat mai "migalos",in special la citirea elementelor
-din linie si la printarea elementelor, doar pentru a sti eu
-mai exact ce se imtampla in situatia respectiva.
-
 ----main----
 Doar ca sa clarific in main len este lungimea vectorului in octeti si count 
 este numarul elemtelor, tin sa clarific deoarece in unele functii count este
