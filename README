@@ -63,13 +63,4 @@ lungimea initiala - lungimea elementului.
 In print am folosit o variabila auxiliara pentru fiecare lucru pe care il 
 afisez adica un char pentru tip doua siruri pentru nume,
 si, in functie de tip cele doua bancnote. Cu ajutorul variabilei count retin 
-pozitia octetului la care am ajuns. La citirea stringurilor am adaugat si 
-alocat pana la terminatorul de sir iar la int-uri am citit direct stiind 
-marimea fiecarui tip. Apoi le-am afisat pe toate in ordinea corespunzatoare.
-Dupa toate functiile se iese din while cu exit si apoi se elibereaza structura,
-headerul, bufferul si apoi vectorul. O tema foarte grea la inceput daca nu esti
-familiarizat cu concepetele propuse, care devine usoara cu fiecare linie de cod inteleasa
-si scrisa. Looking back doar ma deranjeaza ca mi-a luat mult sa inteleg enuntul 
-si restrictiile si adaugarea in structura, de acolo a fost usor. 
-Ne vedem la tema 2 sper cu enuntul putin mai inteligibil, va rog.
-Papaaa numai am chef de niciun partial.
+pozitia octetului la care am ajuns.
